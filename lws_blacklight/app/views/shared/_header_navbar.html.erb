@@ -1,0 +1,21 @@
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+		  <div class="row">
+		    <div class="span3">
+		      <a class="brand" href="<%= root_path %>"><img src="<%=asset_url('logo.png')%>" alt="LucidWorks" /></a>
+		    </div>
+		    <%- unless devise_controller? %>
+    	  	<div class="span6" id="searchbar">
+        	  <% unless @current_collection.blank? %>
+        	    <%= render_search_bar %>
+        	  <% end %>
+      	  </div>
+    		  <div class="span3">
+            <%= render :partial=>'/user_util_links' %>
+          </div>
+        <% end %>
+      </div>
+		</div>
+	</div>
+</div>
